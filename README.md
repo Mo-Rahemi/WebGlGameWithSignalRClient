@@ -3,10 +3,12 @@
 If you want to make an online web game (webgl) in unity with signalR server, you can start from this example and tutorial.
 
 **Prerequisites :**
+
 * Unity editor 2021.3
 * Standard Pipline (Core)
 
 **to run this example :**
+
 1.download this repository. (see Prerequisites)
 2.downlaod SignalR Server from https://github.com/Mo-Rahemi/SignalRGameServerSample.(see Prerequisites)
 3.set target to webgl.
@@ -15,6 +17,7 @@ If you want to make an online web game (webgl) in unity with signalR server, you
 5.build and run game in broweser. (you cannot check connection in editor because we use javascript client so we need run in browser)
 
 **Step by step tutorial :**
+
 1.Create a simple SignalR server (you can find mine here https://github.com/Mo-Rahemi/SignalRGameServerSample)
 2.Create a webgl template file then import SingalR javascript client files to your game.
 **#* Note:** SingalR javascript client files can be found here : https://docs.microsoft.com/en-us/aspnet/core/signalr/javascript-client?view=aspnetcore-6.0&tabs=visual-studio
