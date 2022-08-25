@@ -9,9 +9,9 @@ const GameConnection = {
     ReconnectedCallbackName: "",
     CloseCallbackName: "",
     NotificationCallbackName: "",
-    ZoneChangedCallbackName: "",
-    PlayerJoinZoneCallbackName: "",
-    PlayerLeftZoneCallbackName: "",
+    JoinGameCallbackName: "",
+    NewPlayerJoinGameCallbackName: "",
+    APlayerLeftZoneCallbackName: "",
     GameUpdateCallbackName: "",
 };
 
@@ -71,9 +71,6 @@ function startConnection(url, gameObjectName, startCallbackName, errorCallbackNa
         });
 
     GameConnection.SignalrConnection.start().then(async function () {
-        await GameConnection.SignalrConnection.invoke("JoinGame", GameConnection.Name).catch(function (error) {
-            Game.SendMessage(GameConnection.GameObjectName, GameConnection.ErrorCallbackName, error);
-        });
         Game.SendMessage(GameConnection.GameObjectName, GameConnection.StartCallbackName, GameConnection.SignalrConnection.connectionId);
     }).catch(function (error) {
         Game.SendMessage(GameConnection.GameObjectName, GameConnection.ErrorCallbackName, error.toString());

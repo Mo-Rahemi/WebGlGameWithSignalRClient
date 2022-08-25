@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         Controller = GetComponent<CharacterController>();
-        Connection.OnStarted.AddListener((id) =>
+        Connection.OnYouJoinedGame.AddListener((update) =>
         {
             StartCoroutine(sendMovement());
         });

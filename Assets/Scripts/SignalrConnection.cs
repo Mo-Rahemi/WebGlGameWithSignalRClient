@@ -26,15 +26,8 @@ public class SignalrConnection : MonoBehaviour
 
     private const string _URL = "http://localhost:5004/GameHub";
     private string _myId = "";
-    private List<NetworkPlayer> _networkPlayers;
+    private List<NetworkPlayer> _networkPlayers = new List<NetworkPlayer>();
 
-    private void Start()
-    {
-        _networkPlayers = new List<NetworkPlayer>();
-#if !UNITY_EDITOR
-        StartConnection();
-#endif
-    }
     private void addNetworkPlayer(PlayerInformation playerInformation)
     {
         var playerPrefab = Instantiate(PlayerPrefab, transform);
@@ -98,9 +91,9 @@ public class SignalrConnection : MonoBehaviour
     //Callbacks
     private void Started(string id)
     {
-        OnStarted?.Invoke(id);
         _myId = id;
         _connected = true;
+        OnStarted?.Invoke(id);
         if (Debug.isDebugBuild)
         {
             Debug.Log("started with id " + id);
@@ -149,26 +142,25 @@ public class SignalrConnection : MonoBehaviour
             Debug.Log("server notif " + notificationJson);
         }
     }
-    public void YouJoinedGame(string worldJson)
+    public void YouJoinedGame(string updateJson)
     {
-        var currentUpdate = JsonUtility.FromJson<Update>(worldJson);
-        OnYouJoinedGame?.Invoke(currentUpdate);
+        var currentUpdate = JsonUtility.FromJson<Update>(updateJson);
         foreach (var playerInformation in currentUpdate.PlayerInformations)
         {
-            if (playerInformation.Id == _myId) return;
+            if (playerInformation.Id == _myId) continue;
             addNetworkPlayer(playerInformation);
         }
-
+        OnYouJoinedGame?.Invoke(currentUpdate);
         if (Debug.isDebugBuild)
         {
-            Debug.Log("you joined game with current players " + worldJson);
+            Debug.Log("you joined game with current players " + updateJson);
         }
     }
     public void NewPlayerJoinGame(string playerJson)
     {
         var newPlayerInformation = JsonUtility.FromJson<PlayerInformation>(playerJson);
-        OnNewPlayerJoinGame?.Invoke(newPlayerInformation);
         addNetworkPlayer(newPlayerInformation);
+        OnNewPlayerJoinGame?.Invoke(newPlayerInformation);
         if (Debug.isDebugBuild)
         {
             Debug.Log("joined " + playerJson);
@@ -176,10 +168,10 @@ public class SignalrConnection : MonoBehaviour
     }
     public void APlayerLeftGame(string id)
     {
-        OnAPlayerLeftGame?.Invoke(id);
         var player = _networkPlayers.FirstOrDefault(x => id == x.ServerPlayerInformation.Id);
         if (player != null)
             Destroy(player);
+        OnAPlayerLeftGame?.Invoke(id);
         if (Debug.isDebugBuild)
         {
             Debug.Log("left " + id);

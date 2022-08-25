@@ -12,7 +12,7 @@ public class NetworkPlayer : MonoBehaviour
     {
         Connection.OnGameUpdate.AddListener((update) =>
         {
-            var myInformation = update.PlayerInformations.FirstOrDefault(x => x.Id == ServerPlayerInformation.Id);
+            var myInformation = update?.PlayerInformations?.FirstOrDefault(x => x.Id == ServerPlayerInformation.Id);
             if (myInformation == null) return;
             transform.position = myInformation.Position;
             transform.rotation = Quaternion.AngleAxis(myInformation.LookAt, Vector3.up);

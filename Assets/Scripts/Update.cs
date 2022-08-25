@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+[Serializable]
 public class Update
 {
-    public List<PlayerInformation> PlayerInformations { get; set; } = null;
+    public PlayerInformation[] PlayerInformations;
 }
 

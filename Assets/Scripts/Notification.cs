@@ -1,7 +1,10 @@
-﻿    public class Notification
-    {
-        public string Id { get; set; } = "";
-        public string Time { get; set; } ="";
-        public string Name { get; set; } = "";
-        public string Message { get; set; } = "";
-    }
+﻿using System;
+
+[Serializable]
+public class Notification
+{
+    public string Id;
+    public string Time;
+    public string Name;
+    public string Message;
+}
