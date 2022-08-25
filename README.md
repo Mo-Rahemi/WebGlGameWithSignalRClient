@@ -1,4 +1,4 @@
-# A WebGL game with SignalR server
+# WebGL game with SignalR server
 
 If you want to make a game with signalR server, you can start from this example.
 
