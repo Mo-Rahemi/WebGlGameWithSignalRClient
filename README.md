@@ -60,5 +60,3 @@ If you going to make an online web game (webgl) with unity and signalR server, y
 
 ![2](https://user-images.githubusercontent.com/109326706/186680825-1517c98e-a302-42bd-8281-4dfb08ef503c.jpg)
 
-![2](https://user-images.githubusercontent.com/109326706/186680840-41a294eb-f3d9-4fa9-a635-2c24f9d87713.jpg)
-
