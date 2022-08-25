@@ -1,6 +1,6 @@
 # WebGL game with SignalR server
 
-If you want to make a game with signalR server, you can start from this example.
+If you want to make a web game (webgl) with signalR server, you can start from this example.
 
 Prerequisites :
 * Unity editor 2021.3
