@@ -10,8 +10,19 @@ public class Player : MonoBehaviour
     void Start()
     {
         Controller = GetComponent<CharacterController>();
+        Connection.OnStarted.AddListener((id) =>
+        {
+            StartCoroutine(sendMovement());
+        });
     }
-
+    IEnumerator sendMovement()
+    {
+        while (Connection.Connected)
+        {
+            Connection.Move(transform.position.x, transform.position.y, transform.position.z, transform.rotation.eulerAngles.y);
+            yield return new WaitForSeconds(0.2f);
+        }
+    }
     void Update()
     {
         if (Input.GetKey(KeyCode.W))
