@@ -47,6 +47,9 @@ If you going to make an online web game (webgl) with unity and signalR server, y
       
 4. Change webgl template setting of your project (project setting -> player -> webgl -> Resolution and Presentation (section) -> webgl template) select your template by it's name. my template name is signalr.
 5. Create a jslib file whitch is a javascript file (under assets/plugins folder), and add your code for connecting and interacting with SignalR server and unity game both.
+
 **Note:** You can see my jslib here : https://github.com/Mo-Rahemi/WebGlGameWithSignalRClient/blob/main/Assets/Plugins/SignalrConnection.jslib
+
 **Note:** What is a jslib file ? check here : https://docs.unity3d.com/Manual/webgl-interactingwithbrowserscripting.html
+
 6. Run the game and enjoy.
