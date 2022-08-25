@@ -53,3 +53,12 @@ If you going to make an online web game (webgl) with unity and signalR server, y
 **Note:** What is a jslib file ? check here : https://docs.unity3d.com/Manual/webgl-interactingwithbrowserscripting.html
 
 6. Run the game and enjoy.
+
+**export :**
+
+![1](https://user-images.githubusercontent.com/109326706/186680794-fb8ba278-f1df-48a2-b3af-001db030f7f4.jpg)
+
+![2](https://user-images.githubusercontent.com/109326706/186680825-1517c98e-a302-42bd-8281-4dfb08ef503c.jpg)
+
+![2](https://user-images.githubusercontent.com/109326706/186680840-41a294eb-f3d9-4fa9-a635-2c24f9d87713.jpg)
+
