@@ -60,3 +60,8 @@ If you going to make an online web game (webgl) with unity and signalR server, y
 
 ![2](https://user-images.githubusercontent.com/109326706/186680825-1517c98e-a302-42bd-8281-4dfb08ef503c.jpg)
 
+
+i found this awesome library so going to share with you :
+https://github.com/evanlindsey/Unity-WebGL-SignalR
+https://github.com/sta/websocket-sharp
+https://github.com/endel/NativeWebSocket
