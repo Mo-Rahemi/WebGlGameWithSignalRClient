@@ -10,7 +10,7 @@ If you going to make an online web game (webgl) with unity and signalR server, y
 **to run this example :**
 
 1. download this repository. (see Prerequisites)
-2. downlaod SignalR Server from https://github.com/Mo-Rahemi/SignalRGameServerSample.(see Prerequisites)
+2. downlaod SignalR Server from https://github.com/Mo-Rahemi/SignalRGameServerSample . (see Prerequisites)
 3. start the server. (check listening url (address and port) like http://localhost:5004/GameHub)
 4. set target to webgl.
 5. set server url in SignalRConnection Class.
